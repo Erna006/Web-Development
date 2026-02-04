@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    margin-left: 45px;
+    margin-top: 45px;
+}
+
+.box {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.middle {
+    border-right: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 83px;
+    margin-left: 36px;
+    padding-top:78px;
+    gap: 0px;
+}
+
+.middle img {
+    margin-top: 0px;
+    margin-bottom: -35px;
+}
+
+.middle h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 47px;
+    font-weight: 400;
+    line-height: 63px;
+    margin-bottom: -10px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, rgb(255,89,0), rgb(213,1,195));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-box {
+    margin-bottom: 50px;
+}
+
+.login-box a {
+    display: block;
+    text-align: center;
+    color: #1c1e21;
+    text-decoration: none;
+    margin-top: 6px;
+}
+
+.login-box p {
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+.login-box button {
+    background-color: rgb(0, 136, 244)  ;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.right {
+    font-family: sans-serif;
+    padding: 0px 50px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right input{
+    padding: 10px;
+    width: 550px;
+    height: 60px;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.right button{
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+}
+
+.facebook-login {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.facebook-login a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1c1e21;
+    font-size: 14px;
+}
+
+.meta {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.new_acc {
+    background-color: white;
+    color: rgb(0, 136, 244);
+    border: 1px solid rgb(0, 136, 244);
+    font-size: 13px;
+}
+
+.footer {
+    padding: 20px;
+    color: gray;
+    text-decoration: None;
+    font-size: 12px;
+    text-align: center;
+}
+.footer a{
+    color: gray;
+    text-decoration: none;
+    margin: 8px;
+    font-size: 13px;
+}
+.footer-links {
+    margin: 10px;
+}
