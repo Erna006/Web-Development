@@ -1,0 +1,39 @@
+<!-- Информация о товаре -->
+<div class="product-info">
+  <h3 class="product-title">{{ product().name }}</h3>
+  
+  <p class="product-description">{{ product().description }}</p>
+  
+  <!-- Рейтинг с использованием pipe -->
+  <div class="rating">
+    <div class="stars">
+      <!-- Используем pipe ratingStars для преобразования рейтинга -->
+      @for (star of product().rating | ratingStars; track $index) {
+        <span class="star" 
+              [class.filled]="star.filled" 
+              [class.half]="star.half">
+          ★
+        </span>
+      }
+    </div>
+    <span class="rating-value">{{ product().rating }}</span>
+  </div>
+  
+  <div class="price">{{ product().price | currency:'₸':'symbol':'1.0-0' }}</div>
+  
+  <!-- Кнопки действий -->
+  <div class="actions">
+    <a [href]="product().link" target="_blank" class="btn btn-primary">
+      На Kaspi.kz
+    </a>
+    
+    <div class="share-buttons">
+      <button class="btn-share whatsapp" (click)="shareOnWhatsApp()" title="Поделиться в WhatsApp">
+        <span>📱</span>
+      </button>
+      <button class="btn-share telegram" (click)="shareOnTelegram()" title="Поделиться в Telegram">
+        <span>📨</span>
+      </button>
+    </div>
+  </div>
+</div>
