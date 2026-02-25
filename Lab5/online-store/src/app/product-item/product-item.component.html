@@ -1,0 +1,46 @@
+<div class="product-card">
+  <div class="product-image">
+    <img [src]="product().image" [alt]="product().name">
+  </div>
+  
+  <div class="product-info">
+    <h3 class="product-title">{{ product().name }}</h3>
+    <p class="product-description">{{ product().description }}</p>
+    
+    <div class="rating">
+      <div class="stars">
+        @for (star of getStarsArray(product().rating); track $index) {
+          <span class="star" [class.filled]="star">★</span>
+        }
+      </div>
+      <span class="rating-value">{{ product().rating }}</span>
+    </div>
+    
+    <div class="price">{{ product().price | currency:'₸':'symbol':'1.0-0' }}</div>
+    
+    <div class="product-stats">
+      <span class="likes" [class.liked]="product().likes > 0">
+        ❤ {{ product().likes }}
+      </span>
+    </div>
+    
+    <div class="actions">
+      <button class="btn-like" (click)="onLike()">
+        ❤ Like
+      </button>
+      
+      <button class="btn-delete" (click)="onDelete()">
+        🗑 Delete
+      </button>
+      
+      <div class="share-buttons">
+        <button class="btn-share whatsapp" (click)="shareOnWhatsApp()" title="Поделиться в WhatsApp">
+          📱
+        </button>
+        <button class="btn-share telegram" (click)="shareOnTelegram()" title="Поделиться в Telegram">
+          📨
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

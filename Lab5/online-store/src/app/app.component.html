@@ -1,0 +1,51 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>🛍️ Kaspi.kz Магазин</h1>
+    <p>Выберите категорию товаров</p>
+  </header>
+
+  <div class="main-content">
+    <aside class="sidebar">
+      <h2>Категории</h2>
+      <div class="categories-list">
+        @for (category of categories; track category.id) {
+          <button 
+            class="category-btn"
+            [class.active]="selectedCategory()?.id === category.id"
+            (click)="selectCategory(category)">
+            <span class="category-icon">{{ category.icon }}</span>
+            <span class="category-name">{{ category.name }}</span>
+          </button>
+        }
+      </div>
+    </aside>
+
+    <main class="content">
+      @if (selectedCategory()) {
+        <app-product-list 
+          [products]="products()"
+          [categoryName]="selectedCategory()?.name || ''"
+          (likeProduct)="onLikeProduct($event)"
+          (deleteProduct)="onDeleteProduct($event)"
+        />
+      } @else {
+        <div class="welcome-message">
+          <h2>Добро пожаловать!</h2>
+          <p>Выберите категорию из списка слева, чтобы увидеть товары</p>
+          <div class="categories-preview">
+            @for (category of categories; track category.id) {
+              <div class="preview-item" (click)="selectCategory(category)">
+                <span class="preview-icon">{{ category.icon }}</span>
+                <span>{{ category.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </main>
+  </div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 | kaspi.kz</p>
+  </footer>
+</div>
